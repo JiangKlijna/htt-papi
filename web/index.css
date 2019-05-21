@@ -1,0 +1,66 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Consolas, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    background: #abcdef;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+    background: #abcdef;
+}
+
+.mdui-tab {
+    overflow-x: hidden;
+    background: white;
+}
+
+#h-method {
+    outline: none;
+    border: none;
+    border-top-left-radius: 21%;
+    border-bottom-left-radius: 21%;
+    background: white;
+    width: 60px;
+    height: 72%;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+#h-url {
+    outline: none;
+    border: none;
+    border-left: 1px solid #3d3d3d;
+    border-right: 1px solid #3d3d3d;
+    width: 75%;
+    height: 72%;
+    vertical-align: middle;
+    padding: 0 8px;
+    margin-top: 10px;
+}
+
+#h-send {
+    outline: none;
+    border: none;
+    border-top-right-radius: 21%;
+    border-bottom-right-radius: 21%;
+    background: white;
+    width: 60px;
+    height: 72%;
+    vertical-align: middle;
+    margin-top: 10px;
+}
