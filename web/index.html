@@ -3,118 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>htt-papi</title>
-    <link rel="stylesheet" href="mdui/css/mdui.css">
+    <link rel="stylesheet" href="mdui/css/mdui.min.css">
     <link rel="stylesheet" href="index.css">
-    <script src="mdui/js/mdui.js"></script>
+    <script src="mdui/js/mdui.min.js"></script>
 </head>
-<body class="mdui-theme-primary-brown">
+<body class="mdui-theme-primary-blue">
+<!--<div class="mdui-progress">-->
+<!--<div class="mdui-progress-indeterminate"></div>-->
+<!--</div>-->
 <div id="main" class="mdui-card">
     <header>
-        <button id="h-method" class="mdui-ripple">GET&nbsp;▼</button><input id="h-url"><button id="h-send" class="mdui-ripple">Send&nbsp;▲</button>
+        <p>
+            <button id="h-method" class="mdui-ripple">GET&nbsp;▼</button><input id="h-url" value="http://127.0.0.1:8080/app/user/get"><button id="h-send" class="mdui-ripple" onclick="location='index.html'">Send&nbsp;▲</button>
+        </p>
     </header>
-    <footer>
-        <div class="mdui-tab mdui-tab-full-width mdui-panel-popout" mdui-tab>
-            <a href="#tab-req" class="mdui-ripple">Request</a>
-            <a href="#tab-res" class="mdui-ripple">Response</a>
-        </div>
-        <div id="tab-req" class="mdui-p-a-2 mdui-panel mdui-panel-gapless" mdui-panel>
-            <div class="mdui-panel-item">
-                <div class="mdui-panel-item-header">Parameter</div>
-                <div class="mdui-panel-item-body">
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                </div>
+    <nav class="mdui-tab mdui-tab-full-width mdui-panel-popout" mdui-tab>
+        <a href="#tab-req" class="mdui-ripple mdui-tab-active">Request</a>
+        <a href="#tab-res" class="mdui-ripple">Response</a>
+    </nav>
+    <aside id="tab-req" class="mdui-panel mdui-panel-gapless" mdui-panel>
+        <div class="mdui-panel-item mdui-panel-item-open radius-top">
+            <div class="mdui-panel-item-header">Parameter</div>
+            <div class="mdui-panel-item-body">
+                <p class="item">
+                    <button class="mdui-ripple item-seq">1</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">2</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">3</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
             </div>
+        </div>
 
-            <div class="mdui-panel-item">
-                <div class="mdui-panel-item-header">Header</div>
-                <div class="mdui-panel-item-body">
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                </div>
+        <div class="mdui-panel-item radius-bot">
+            <div class="mdui-panel-item-header">Header</div>
+            <div class="mdui-panel-item-body">
+                <p class="item">
+                    <button class="mdui-ripple item-seq">1</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">2</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">3</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
             </div>
         </div>
-        <div id="tab-res" class="mdui-p-a-2 mdui-panel mdui-panel-gapless" mdui-panel>
-            <div class="mdui-panel-item">
-                <div class="mdui-panel-item-header">Result</div>
-                <div class="mdui-panel-item-body">
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>First content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                </div>
+    </aside>
+    <aside id="tab-res" class="mdui-panel mdui-panel-gapless" mdui-panel>
+        <div class="mdui-panel-item mdui-panel-item-open radius-top">
+            <div class="mdui-panel-item-header">Result</div>
+            <div class="mdui-panel-item-body">
+                <textarea id="result-text">{}</textarea>
             </div>
+        </div>
 
-            <div class="mdui-panel-item">
-                <div class="mdui-panel-item-header">Header</div>
-                <div class="mdui-panel-item-body">
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                    <p>Second content</p>
-                </div>
+        <div class="mdui-panel-item radius-bot box">
+            <div class="mdui-panel-item-header">Header</div>
+            <div class="mdui-panel-item-body">
+                <p class="item">
+                    <button class="mdui-ripple item-seq">1</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">2</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">3</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">4</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">5</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
+                <p class="item">
+                    <button class="mdui-ripple item-seq">6</button><input class="item-key" placeholder="key"><input class="item-val" placeholder="value"><button class="mdui-ripple item-del">×</button>
+                </p>
             </div>
         </div>
+    </aside>
     </footer>
 </div>
 <script src="index.js"></script>
