@@ -11,6 +11,10 @@ a, input, button {
 !important;
 }
 
+.box::-webkit-scrollbar {
+    display: none;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -36,7 +40,7 @@ aside {
     overflow-y: auto;
     background: #abcdef;
     padding: 7px 0 0 0;
-    -ms-overflow-style:none;
+    -ms-overflow-style: none;
 }
 
 .mdui-tab {
@@ -90,6 +94,13 @@ header p {
 .item {
     margin: 10px 0;
     height: 35px;
+    line-height: 35px;
+}
+
+.item.mdui-ripple {
+    background: #abcdef;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .item-seq, .item-key, .item-val, .item-del {
@@ -120,11 +131,11 @@ header p {
 }
 
 .item-key {
-    width: calc(38% - 54px);
+    width: calc(38% - 51px);
 }
 
 .item-val {
-    width: calc(62% - 54px);
+    width: calc(62% - 51px);
 }
 
 .radius-top {
