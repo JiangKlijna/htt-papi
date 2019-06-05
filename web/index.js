@@ -30,7 +30,8 @@
  */
 
 var Item = (function () {
-    var _Item = function (num) {
+    var _Item = function (num, key, val, isEdit) {
+        this.index = num;
         this.item = document.createElement("p");
         this.seq = document.createElement("button");
         this.key = document.createElement("input");
@@ -42,46 +43,90 @@ var Item = (function () {
         this.seq.innerHTML = num;
         this.key.className = "item-key";
         this.key.setAttribute("placeholder", "key");
+        if (key) this.key.setAttribute("value", key);
         this.val.className = "item-val";
         this.val.setAttribute("placeholder", "value");
+        if (val) this.val.setAttribute("value", val);
         this.del.className = "mdui-ripple item-del";
         this.del.innerHTML = "×";
         this.item.appendChild(this.seq);
         this.item.appendChild(this.key);
         this.item.appendChild(this.val);
         this.item.appendChild(this.del);
+        if (!isEdit) {
+            this.key.setAttribute("disable", "disable")
+            this.val.setAttribute("disable", "disable")
+            this.del.setAttribute("disable", "disable")
+        }
     };
     return _Item;
 })();
 
-var Items = function () {
+var Items = function (div, isEdit) {
+    var self = this;
+    var add = document.createElement("p");
+    add.className = "item mdui-ripple";
+    add.innerHTML = "＋";
+    add.onclick = function (e, key, val) {
+        var item = new Item(arr.length + 1, key, val, isEdit);
+        item.del.onclick = function () {
+            self.delete(item.index);
+        };
+        arr.push(item);
+        div.removeChild(add);
+        div.appendChild(item.item);
+        div.appendChild(add);
+    };
+    if (isEdit) div.appendChild(add);
     var arr = [];
-    this.add = function () {
-        arr.push(new Item(arr.length + 1));
+    this.add = function (key, val) {
+        add.onclick(event, key, val);
+    };
+    this.delete = function (index) {
+        var item = arr[index - 1];
+        if (item) {
+            arr.splice(index - 1, 1);
+            div.removeChild(item.item);
+            this.refresh();
+        }
+    };
+    this.refresh = function () {
+        for (var i in arr) {
+            var item = arr[i];
+            item.index = (parseInt(i) + 1);
+            item.seq.innerHTML = item.index;
+        }
     };
     this.size = function () {
         return arr.length;
     };
     this.map = function () {
-
+        var data = {};
+        for (var i in arr) {
+            var item = arr[i];
+            var key = item.key.value;
+            var val = item.val.value;
+            data[key ? key : ""] = val ? val : "";
+        }
+        return data;
     }
 };
 
 var RequestParameter = (function () {
-    var self = new Items();
     var el = document.getElementById("Request-Parameter");
-    el.prepend(new Item(3).item);
-    el.prepend(new Item(2).item);
-    el.prepend(new Item(1).item);
+    var self = new Items(el, true);
     return self;
 })();
 
 var RequestHeader = (function () {
-    var self = new Items();
     var el = document.getElementById("Request-Header");
-    el.prepend(new Item(3).item);
-    el.prepend(new Item(2).item);
-    el.prepend(new Item(1).item);
+    var self = new Items(el, true);
+    return self;
+})();
+
+var RequestCookie = (function () {
+    var el = document.getElementById("Request-Cookie");
+    var self = new Items(el, true);
     return self;
 })();
 
@@ -92,10 +137,20 @@ var ResponseResult = (function () {
 })();
 
 var ResponseHeader = (function () {
-    var self = new Items();
     var el = document.getElementById("Response-Header");
-    el.prepend(new Item(3).item);
-    el.prepend(new Item(2).item);
-    el.prepend(new Item(1).item);
+    var self = new Items(el, false);
     return self;
 })();
+
+var Header = (function () {
+    var inst = new mdui.Menu('#open', '#menu');
+    document.getElementById("h-method").onclick = function () {
+        inst.open();
+    }
+})();
+
+// window.external.invoke(Date.now().toString());
+// window.external.invoke(Date.now().toString());
+// setInterval(function () {
+//     window.external.invoke(Date.now().toString());
+// }, 1000)

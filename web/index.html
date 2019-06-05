@@ -11,6 +11,21 @@
 <!--<div class="mdui-progress">-->
 <!--<div class="mdui-progress-indeterminate"></div>-->
 <!--</div>-->
+<!--<ul class="mdui-menu" id="menu">-->
+    <!--<li class="mdui-menu-item">-->
+        <!--<a href="javascript:;" class="mdui-ripple">Refresh</a>-->
+    <!--</li>-->
+    <!--<li class="mdui-menu-item" disabled>-->
+        <!--<a href="javascript:;">Help & feedback</a>-->
+    <!--</li>-->
+    <!--<li class="mdui-menu-item">-->
+        <!--<a href="javascript:;" class="mdui-ripple">Settings</a>-->
+    <!--</li>-->
+    <!--<li class="mdui-divider"></li>-->
+    <!--<li class="mdui-menu-item">-->
+        <!--<a href="javascript:;" class="mdui-ripple">Sign out</a>-->
+    <!--</li>-->
+<!--</ul>-->
 <div id="main" class="mdui-card">
     <header>
         <p>
@@ -24,16 +39,15 @@
     <aside id="tab-req" class="mdui-panel mdui-panel-gapless" mdui-panel>
         <div class="mdui-panel-item mdui-panel-item-open radius-top">
             <div class="mdui-panel-item-header">Parameter</div>
-            <div class="mdui-panel-item-body" id="Request-Parameter">
-                <p class="item mdui-ripple">＋</p>
-            </div>
+            <div class="mdui-panel-item-body" id="Request-Parameter"></div>
         </div>
-
-        <div class="mdui-panel-item radius-bot">
+        <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">Header</div>
-            <div class="mdui-panel-item-body" id="Request-Header">
-                <p class="item mdui-ripple">＋</p>
-            </div>
+            <div class="mdui-panel-item-body" id="Request-Header"></div>
+        </div>
+        <div class="mdui-panel-item radius-bot">
+            <div class="mdui-panel-item-header">Cookie</div>
+            <div class="mdui-panel-item-body" id="Request-Cookie"></div>
         </div>
     </aside>
     <aside id="tab-res" class="mdui-panel mdui-panel-gapless" mdui-panel>
@@ -47,11 +61,10 @@
         <div class="mdui-panel-item radius-bot box">
             <div class="mdui-panel-item-header">Header</div>
             <div class="mdui-panel-item-body" id="Response-Header">
-                <p class="item mdui-ripple">＋</p>
+                <!--<p class="item mdui-ripple">＋</p>-->
             </div>
         </div>
     </aside>
-    </footer>
 </div>
 <script src="index.js"></script>
 </body>
